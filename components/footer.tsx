@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Github, Linkedin, Mail, ArrowUp } from "lucide-react"
+import { Github, Linkedin, Send, ArrowUp } from "lucide-react"
 import { motion } from "framer-motion"
 import { useState, useEffect } from "react"
 
@@ -23,10 +23,10 @@ export function Footer() {
 
   const socialLinks = [
     { href: "https://github.com/hongleap", icon: Github, label: "GitHub" },
-    { href: "https://linkedin.com/in/phohongleap/", icon: Linkedin, label: "LinkedIn" },
-    { href: "mailto:[EMAIL_ADDRESS]", icon: Mail, label: "Email" },
+    { href: "https://www.linkedin.com/in/pho-hongleap-14abb5342", icon: Linkedin, label: "LinkedIn" },
+    { href: "https://t.me/hongleap", icon: Send, label: "Telegram" },
   ]
-  
+
   return (
     <footer className="border-t border-border bg-muted/30 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -35,10 +35,8 @@ export function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col md:flex-row items-center justify-between gap-4"
+          className="flex flex-col md:flex-row items-center justify-center gap-4"
         >
-          <p className="text-sm text-muted-foreground">© {currentYear} Portfolio. All rights reserved.</p>
-
           <div className="flex items-center gap-4">
             {socialLinks.map((link, index) => {
               const Icon = link.icon

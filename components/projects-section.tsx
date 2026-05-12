@@ -5,53 +5,28 @@ import { Github, ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    title: "E-Commerce API",
-    label: "What is",
-    highlight: "E-Commerce?",
+    title: "DocuHub Platform",
+    highlight: "DocuHub Platform",
+    highlightColor: "#0dce6a",
     overlayColor: "rgba(113, 113, 113, 0)",
     description:
       "A RESTful API built with Spring Boot for managing products, orders, and user authentication with JWT.",
     tags: ["Java", "Spring Boot", "PostgreSQL", "JWT"],
     image: "/projects/Docuhub.png",
-    github: "https://github.com/hongleap",
-    live: "",
-  },
-  {
-    title: "Task Management App",
-    label: "What is",
-    highlight: "Web-Client?",
-    overlayColor: "rgba(10, 46, 26, 0)",
-    description:
-      "Full-stack task management application with real-time updates, drag-and-drop, and team collaboration features.",
-    tags: ["React", "Node.js", "MongoDB", "Socket.io"],
-    image: "/projects/browser-render.png",
-    github: "https://github.com/hongleap",
-    live: "",
+    github: "https://github.com/hongleap/Docuhub",
+    live: "https://docuhub.me",
   },
   {
     title: "Portfolio Website",
-    label: "What is",
-    highlight: "HTML, CSS and JavaScript?",
-    highlightColor: "#FF6B35",
-    overlayColor: "rgba(10, 46, 26, 0)",
+    highlight: "Hongleap's Portfolio",
+    highlightColor: "#0dce6a",
+    overlayColor: "rgba(113, 113, 113, 0)",
     description:
       "A modern developer portfolio built with Next.js featuring smooth animations, dark theme, and responsive design.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    image: "/projects/browser-render.png",
-    github: "https://github.com/hongleap",
-    live: "",
-  },
-  {
-    title: "Chat Application",
-    label: "What is",
-    highlight: "Github?",
-    overlayColor: "rgba(10, 46, 26, 0)",
-    description:
-      "Real-time chat application with private messaging, group chats, and file sharing capabilities.",
-    tags: ["React", "Firebase", "WebSocket", "Tailwind CSS"],
-    image: "/projects/browser-render.png",
-    github: "https://github.com/hongleap",
-    live: "",
+    image: "/projects/Portfolio.png",
+    github: "https://github.com/hongleap/my-portfolio.git",
+    live: "https://hongleap.me",
   },
 ];
 
@@ -79,7 +54,7 @@ export function ProjectsSection() {
                   }}
                 >
                   <div
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105 opacity-50"
                     style={{ backgroundImage: `url(${project.image})` }}
                   />
 
@@ -93,7 +68,7 @@ export function ProjectsSection() {
 
                     <div className="leading-none">
                       <span
-                        className="block font-black"
+                        className="block font-black text-emerald-600  "
                         style={{
                           fontSize: "clamp(14px, 3.5vw, 22px)",
                           color:
