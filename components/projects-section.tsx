@@ -32,17 +32,17 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="py-24 bg-muted">
+    <section id="projects" className="py-16 sm:py-24 bg-muted">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
-          <div className="flex justify-start items-center">
-            <u className="text-3xl sm:text-4xl font-bold text-white text-left mb-16 tracking-tight">
+          <div className="flex justify-start items-center mb-10 sm:mb-16">
+            <u className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-left tracking-tight">
               Projects
             </u>
           </div>
 
           <div
-            className="grid grid-cols-1 sm:grid-cols-2 gap-3"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4"
             style={{ borderRadius: "16px", overflow: "hidden" }}
           >
             {projects.map((project, index) => (
@@ -80,7 +80,6 @@ export function ProjectsSection() {
                           textShadow: "0 1px 3px rgba(0,0,0,0.3)",
                         }}
                       >
-                        {project.label}{" "}
                         <span style={{ color: project.highlightColor }}>
                           {project.highlight}
                         </span>
