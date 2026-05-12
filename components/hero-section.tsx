@@ -1,85 +1,57 @@
-"use client"
-
-import { useEffect, useRef } from "react"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Download } from "lucide-react"
-import { motion } from "framer-motion"
-import gsap from "gsap"
-import { AnimatedBackground, SparklesCore } from "@/components/ui/animated-background"
-import { TextReveal, TextRevealByWord, FadeIn } from "@/components/ui/text-reveal"
-import { FloatingIcons } from "@/components/ui/floating-elements"
-import { MagneticButton } from "@/components/ui/magnetic-button"
+"use client";
+import { FadeIn } from "@/components/ui/text-reveal";
+import Image from "next/image";
 
 export function HeroSection() {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const sparklesRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (containerRef.current) {
-      const circles = containerRef.current.querySelectorAll(".bg-circle")
-      circles.forEach((circle, i) => {
-        gsap.to(circle, {
-          x: "random(-50, 50)",
-          y: "random(-50, 50)",
-          duration: "random(10, 20)",
-          repeat: -1,
-          yoyo: true,
-          ease: "none",
-          delay: i * 2,
-        })
-      })
-    }
-  }, [])
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-16">
-      <AnimatedBackground />
-      <SparklesCore />
-      <FloatingIcons />
+    <section className="relative min-h-screen flex items-center justify-center pt-16 bg-muted">
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-6xl mx-auto text-center">
-          <FadeIn delay={0.2}>
-            <div className="inline-block mb-4 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium backdrop-blur-sm border border-primary/20">
-              Welcome to my portfolio
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 justify-center items-center">
+        <div className="max-w-6xl mx-auto text-center justify-center">
+          <div className="my-16 text-4xl font-bold">
+            Pho Hongleap |{" "}
+            <span className="text-emerald-600">Backend Developer</span>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 justify-center mx-16">
+            <div>
+              <FadeIn delay={0.6}>
+                <h1 className="text-base sm:text-2xl bold text-white max-w-2xl mx-auto mb-8 rounded-md text-left">
+                  Developer who continues{" "}
+                  <u className="text-blue-500">learning</u> and{" "}
+                  <u className="text-blue-500">growing.</u>
+                </h1>
+              </FadeIn>
+              <FadeIn delay={0.6}>
+                <p className="text-base sm:text-lg text-white bg-black mb-8 max-w-2xl mx-auto p-8 rounded-md text-left">
+                  " Welcome to my little corner of the internet where{" "}
+                  <span className="text-red-700">bugs</span> are temporary, but
+                  learning is forever 🚀. "
+                </p>
+              </FadeIn>
+              <FadeIn delay={0.6}>
+                <div className="text-base sm:text-lg text-white bg-rgba(60, 60, 60, 0.1) rounded-md  border border-white mb-8 max-w-2xl mx-auto p-8 rounded-md text-left">
+                  👋 See me on
+                  <br></br>
+                  <div className="grid grid-cols-1 gap-2 justify-center pt-3">
+                    <a href="https://github.com/hongleap" target="_blank" rel="noopener noreferrer" className="text-slate-500 underline">Github</a>
+                    <a href="https://www.linkedin.com/in/phohongleap/" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Linkedin</a>
+                  </div>
+                </div>  
+              </FadeIn>
             </div>
-          </FadeIn>
-
-          <TextReveal>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 text-balance">
-              Hi, I'm <span className="text-primary bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Pho Hongleap</span>
-            </h1>
-          </TextReveal>
-
-          <FadeIn delay={0.4}>
-            <p className="text-xl sm:text-2xl text-muted-foreground mb-4 font-medium">Junior Full-Stack Developer</p>
-          </FadeIn>
-
-          <FadeIn delay={0.6}>
-            <p className="text-base sm:text-lg text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed text-pretty">
-              Passionate about building modern web applications, learning cutting-edge technologies, and solving complex
-              problems through clean, efficient code.
-            </p>
-          </FadeIn>
-
-          <FadeIn delay={0.8}>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <MagneticButton asChild size="lg" className="group">
-                <a href="#projects">
-                  View My Projects
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </a>
-              </MagneticButton>
-              <MagneticButton asChild variant="outline" size="lg">
-                <a href="#contact">
-                  <Download className="mr-2 h-4 w-4" />
-                  Download Resume
-                </a>
-              </MagneticButton>
+            <div>
+              <Image
+                src="/hongleap.jpg"
+                alt="Profile"
+                width={420}
+                height={420}
+                className="rounded-md opacity-90"
+              />
             </div>
-          </FadeIn>
+          </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

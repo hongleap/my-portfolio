@@ -3,9 +3,10 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/theme-toggle"
+
 import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import Image from "next/image"
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -32,9 +33,7 @@ export function Navigation() {
   }, [])
 
   const navLinks = [
-    { href: "#about", label: "About" },
     { href: "#projects", label: "Projects" },
-    { href: "#skills", label: "Skills" },
     { href: "#contact", label: "Contact" },
   ]
 
@@ -55,7 +54,7 @@ export function Navigation() {
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              Portfolio
+              <Image src="/sticker.webp" alt="Profile" width={40} height={40} className="rounded-full" />
             </motion.span>
             <motion.span
               className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"
@@ -94,9 +93,8 @@ export function Navigation() {
             })}
           </div>
 
-          {/* Theme Toggle and Mobile Menu Button */}
+          {/* Mobile Menu Button */}
           <div className="flex items-center gap-2">
-            <ThemeToggle />
             <motion.div whileTap={{ scale: 0.9 }}>
               <Button
                 variant="ghost"

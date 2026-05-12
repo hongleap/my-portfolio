@@ -22,11 +22,11 @@ export function Footer() {
   }
 
   const socialLinks = [
-    { href: "https://github.com", icon: Github, label: "GitHub" },
-    { href: "https://linkedin.com", icon: Linkedin, label: "LinkedIn" },
-    { href: "mailto:your.email@example.com", icon: Mail, label: "Email" },
+    { href: "https://github.com/hongleap", icon: Github, label: "GitHub" },
+    { href: "https://linkedin.com/in/phohongleap/", icon: Linkedin, label: "LinkedIn" },
+    { href: "mailto:[EMAIL_ADDRESS]", icon: Mail, label: "Email" },
   ]
-
+  
   return (
     <footer className="border-t border-border bg-muted/30 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
